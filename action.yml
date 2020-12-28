@@ -1,0 +1,12 @@
+name: Open Pull Requests Chatwork Notifier
+description: Post the opened pull request to chatwork.
+inputs:
+  chatwork-api-token:
+    description: Chatwork authentication token
+    required: true
+  chatwork-room-id:
+    description: Chatwork room id
+    required: true
+runs:
+  using: node12
+  main: dist/index.js
