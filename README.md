@@ -1,6 +1,7 @@
 # Open Pull Request Chatwork Notifier  javascript action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+Post the opened pull request to chatwork.  
+Works only with the open action of the pull request event.  
 
 ## Inputs
 
@@ -12,16 +13,23 @@ Chatwork authentication token.
 ### `chatwork-room-id`
 
 **Required**  
-Chatwork room id.  
-
-### `github-token`
-
-The GitHub token used to create an authenticated client.  
+Chatwork room id.   
 
 ## Example usage
 
 ```yml
-uses: actions/hello-world-javascript-action@v1.1
-with:
-who-to-greet: 'Mona the Octocat'
+name: example
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open Pull Requests Chatwork Notifier
+        uses: KeisukeKudo/open_pull-request_chatwork_notifier@v1
+        with:
+          chatwork-api-token: ${{ secrets.CHATWORK_API_TOKEN }}
+          chatwork-room-id: ${{ secrets.CHATWORK_ROOM_ID }}
 ```

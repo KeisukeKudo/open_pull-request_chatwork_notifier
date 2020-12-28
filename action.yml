@@ -1,5 +1,8 @@
 name: Open Pull Requests Chatwork Notifier
 description: Post the opened pull request to chatwork.
+branding:
+  icon: 'message-circle'
+  color: 'blue'
 inputs:
   chatwork-api-token:
     description: Chatwork authentication token
