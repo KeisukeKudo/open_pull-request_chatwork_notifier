@@ -1,4 +1,4 @@
-# Open Pull Request Chatwork Notifier  javascript action
+# Open pull request chatwork notifier JavaScript action.
 
 Post the opened pull request to chatwork.  
 Works only with the open action of the pull request event.  
