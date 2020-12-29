@@ -6,9 +6,9 @@ process.on('unhandledRejection', handleError);
 main().catch(handleError);
 
 async function main(): Promise<void> {
-  const {eventName} = context;
-  const payload = context.payload;
-  const {action} = payload;
+  const eventName = context.eventName ?? '';
+  const payload = context.payload ?? {};
+  const action = payload.action ?? '';
   if (eventName !== 'pull_request' || action !== 'opened') {
     throw new Error('Valid only if you open a pull request');
   }
